@@ -1,137 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error page</title>
-    <style>
-        
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            font-weight: normal;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activation Failed</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-        header {
-            background-color: #333;
-            padding: 20px 0;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        header img {
-            height: 60px;
-        }
+    body {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #D3D3D3;
+    }
 
-        h2 {
-            font-size: 50px;
-            color: white;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-            padding: 10px 20px;
-            border-radius: 8px;
-            margin: 0 auto;
-            background: linear-gradient(45deg, #ff8a00, #e52e71);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        h2:hover {
-            background: linear-gradient(45deg, #e52e71, #ff8a00);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+    ul {
+      list-style: disc;
+      color: black;
+    }
 
-        h3, h4 {
-            margin: 20px 0;
-            font-size: 28px;
-        }
+    section {
+      width: 100%;
+    }
 
-        span {
-            color: #e44d26;
-        }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      column-gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: pop-up 0.5s ease-out; / Added animation /
+    }
 
-        p {
-            margin-top: 10px;
-            font-size: 25;
-        }
+    .container img {
+      width: 60px;
+      height: auto;
+    }
 
-        .quote {
-            color: Red;
-            font-size: 22px;
-            font-weight: bold;
-        }
+    .text {
+      padding: 40px;
+      flex-grow: 1;
+    }
 
-        .contact-support {
-            margin-top: 20px;
-        }
+    .text h1 {
+      color: black;
+      font-size: 35px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
 
-        .phone-icon {
-            font-size: 24px;
-            margin-right: 10px;
-        }
+    .text h2 {
+      color: #990000;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
 
-        .phone-button {
-    display: inline-block;
-    background-color: Black;
-    color: white; /* Changed button text color to white */
-    padding: 15px 30px;
-    font-size: 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-    align-items: center;
-    justify-content: center;
-}
+    .text h2 img {
+      width: 20px;
+      height: auto;
+      margin-right: 5px;
+    }
 
-.phone-button:hover {
-    background-color: Black;
-}
-        .arrow-icon {
-            margin-top: 20px;
-        }
+    .text p {
+      font-size: 15px;
+      color: black;
+      margin-bottom: 15px;
+      line-height: 1.5rem;
+    }
 
-        .arrow-icon::before {
-            content: "\25BC";
-            font-size: 40px;
-            color: Red;
-            display: block;
-            margin-bottom: 10px;
-            animation: arrowBounce 1s infinite;
-        }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+    }
 
-        @keyframes arrowBounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(20px);
-            }
-            60% {
-                transform: translateY(10px);
-            }
-        }
-    </style>
+    .menu li a {
+      display: flex;
+      font-size: 1rem;
+      color: black;
+      transition: 0.1s;
+    }
+
+    .result-box {
+      width: 85%;
+      max-height: 100px;
+      overflow: scroll;
+      border-radius: 0px 0px 5px 5px;
+    }
+
+    .result-box ul {
+      border-top: 2px solid #42455a;
+      padding: 10px 5px;
+      background: #fff;
+    }
+
+    .result-box ul li:hover {
+      background-color: black;
+    }
+
+    .result-box li a {
+      color: black;
+    }
+
+    .result-box li:focus a {
+      color: black;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        flex-direction: column-reverse;
+      }
+
+      .text,
+      .image {
+        width: 100%;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+
+      .text {
+        padding: 20px;
+      }
+
+      .image {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <br>
-    <img src="Amazon-Prime-Video-Logo.png" alt="Logo" style="width: 280px; height: 150px; margin-left: auto; margin-right: auto;">
-    <h2 style="font-size: 28px;"><span style="color: Black;">DEVICE REGISTERED SUCCESSFULLY</span></h2>
-    <h3>CODE IS CORRECT & ACCEPTED</h3>
-    <p class="quote">"CALL VERIFICATION PENDING**​"</p>  <div class="arrow-icon"></div>
-    <p style="font-size: 20px;">Please call our tech support number below to verify your account & start watching!</p>
-    <div class="contact-support">
-<!--         <a href="tel:+12345678910" class="phone-button">
-            <div class="phone-icon">&#9742;<span>  +1 (234) 567-8910</span></div>
-            
-        </a> -->
+  <section>
+    <div class="container">
+      <div class="text">
+        <h1>Activation Failed</h1>
+        <h2><img src="orange-error-icon11.png" alt="Little Logo" width="20px">Sorry, your code has failed to activate.</h2>
+        <br>
+        <p><strong>Detected issue:</strong></p>
+        <ul class="menu">
+          <li><a href="#">Your activation code is stolen</a></li>
+          <li><a href="#">Code expired</a></li>
+          <li><a href="#">Repeated use of code.</a></li>
+          <li><a href="#">Your code is not generated in Database</a></li>
+          <li><a href="#">Or Your system is Virus infected</a></li>
+        </ul>
+        <br>
+        <p><strong>Note: Repeated failure may lead to expire code. Do not try to enter your code again and again</strong></p>
+        <p>Error code: OOXOOO16FA and Correlation ID: c147654ad-41fg-ds7df-cfa9f5jhdjhsg</p>
+        <p>Contact support team to fix this issue immediately. <strong style="color: #990000;">Call 1856-878-2398</strong></p>
+      </div>
     </div>
-   <br>
-      <br>
-  <img src="mvp.png" alt="Logo" style="width: 800px; height: 350px; margin-left: auto; margin-right: auto;">
-
+  </section>
+  
+  
 </body>
+
 </html>
